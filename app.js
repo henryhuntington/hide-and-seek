@@ -49,6 +49,9 @@ function handleGuess(correctSpot, userGuess) {
         correctGuesses++;
     }
     // update the DOM to show this change to the user (including the losses, not tracked directly in state)
+    winsEl.textContent = correctGuesses;
+    lossesEl.textContent = totalGuesses - correctGuesses;
+    totalEl.textContent = totalGuesses;
 }
 
 function resetGame() {
