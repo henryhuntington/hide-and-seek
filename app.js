@@ -41,14 +41,18 @@ function handleGuess(correctSpot, userGuess) {
     // then increment the guesses
     totalGuesses++;
     // then grab the appropriate container element for the correct guess from the DOM
-
+    const correctGuess = document.getElementById(`${correctSpot}-container`);
     // then add the face class to that element so that the face shows up
+    correctGuess.classList.add('face');
     // then if the user guess is correct, increment the correct guesses
+    if (userGuess === correctSpot) {
+        correctGuesses++;
+    }
     // update the DOM to show this change to the user (including the losses, not tracked directly in state)
 }
 
 function resetGame() {
-    shedContainer.classlist.remove('face');
-    treeContainer.classlist.remove('face');
-    boulderContainer.classlist.remove('face');
+    shedContainer.classList.remove('face');
+    treeContainer.classList.remove('face');
+    boulderContainer.classList.remove('face');
 }
